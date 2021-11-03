@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import "./index.css";
+import "../App.css";
+import "../index.css";
 
 const App: React.FC = () => {
 	const [artistName, setArtistName] = useState("");
