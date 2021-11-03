@@ -1,0 +1,6 @@
+{
+	"tailwindCSS.includeLanguages": {
+		"plaintext": "javascript"
+	},
+	"tailwindCSS.colorDecorators": true
+}
