@@ -1,24 +1,31 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import "../index.css";
+import axios from "axios";
+
+import { Card } from "./organisms/";
+import { Pill, FavoriteButton } from "./molecule/";
+
+import DataFetchingOne from "./DataFetchingOne";
+import DataFetchingTwo from "./DataFetchingTwo";
 
 const App: React.FC = () => {
-	const [artistName, setArtistName] = useState("");
+	// const [songs, setSongsState] = useState([]);
+	// // console.log("start",songs)
 
-	const getArtistName = useCallback(async () => {
-		const res = await fetch("http://localhost:3001/songs?artist_name=Nirvana");
-		const json = await res.json();
-		console.log(json);
-		setArtistName(json[0].artist_name);
-	}, []);
+	// const getSongsState = async () => {
+	// 	const res = await fetch("http://localhost:3001/songs");
+	// 	const json = await res.json();
+	// 	console.log(json);
+	// 	setSongsState(json);
+	// };
 
-	useEffect(() => {
-		getArtistName();
-	});
+	// useEffect(() => {
+	// 	getSongsState();
+	// }, []);
 
 	return (
-		<React.Fragment>
-			<h1>{artistName}</h1>
+		<>
 			<div className="flex justify-items-center flex-wrap p-4 bg-green-200">
 				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 round.ed-lg text-9xl">
 					1
@@ -26,32 +33,13 @@ const App: React.FC = () => {
 				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
 					2
 				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					3
-				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					4
-				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					5
-				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					6
-				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					7
-				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					8
-				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					9
-				</div>
-				<div className="flex justify-center items-center m-4 bg-green-400 h-80 w-80 rounded-lg text-9xl">
-					10
-				</div>
 			</div>
-		</React.Fragment>
+			<Card></Card>
+			<FavoriteButton></FavoriteButton>
+			<Pill color={"pink"} id={1} genre={"female band"}></Pill>
+			{/* <DataFetchingOne></DataFetchingOne> */}
+			<DataFetchingTwo></DataFetchingTwo>
+		</>
 	);
 };
 
