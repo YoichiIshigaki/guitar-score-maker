@@ -11,22 +11,22 @@
 				{
 					"grenre_id": 1,
 					"genre_name": "expert",
-					"color": "green-300"
+					"color": "green"
 				},
 				{
 					"grenre_id": 2,
 					"genre_name": "anime song",
-					"color": "blue-300"
+					"color": "blue"
 				},
 				{
 					"grenre_id": 3,
 					"genre_name": "heavy metal",
-					"color": "gray-300"
+					"color": "gray"
 				},
 				{
 					"grenre_id": 4,
 					"genre_name": "female band",
-					"color": "pink-300"
+					"color": "pink"
 				}
 			],
 			"favorite_count": 11,
@@ -45,22 +45,22 @@
 				{
 					"grenre_id": 5,
 					"genre_name": "beginner",
-					"color": "green-300"
+					"color": "green"
 				},
 				{
 					"grenre_id": 6,
 					"genre_name": "underground",
-					"color": "blue-300"
+					"color": "blue"
 				},
 				{
 					"grenre_id": 7,
 					"genre_name": "Alternative Rock",
-					"color": "gray-300"
+					"color": "gray"
 				},
 				{
 					"grenre_id": 8,
 					"genre_name": "three-piece band",
-					"color": "pink-300"
+					"color": "pink"
 				}
 			],
 			"favorite_count": 12,
@@ -79,22 +79,22 @@
 				{
 					"grenre_id": 9,
 					"genre_name": "beginner",
-					"color": "green-300"
+					"color": "green"
 				},
 				{
 					"grenre_id": 10,
 					"genre_name": "underground",
-					"color": "blue-300"
+					"color": "blue"
 				},
 				{
 					"grenre_id": 11,
 					"genre_name": "Alternative Rock",
-					"color": "gray-300"
+					"color": "gray"
 				},
 				{
 					"grenre_id": 12,
 					"genre_name": "three-piece band",
-					"color": "pink-300"
+					"color": "pink"
 				}
 			],
 			"favorite_count": 13,
