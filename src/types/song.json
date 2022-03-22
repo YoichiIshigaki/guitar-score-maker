@@ -1,0 +1,34 @@
+{
+    "id": 1,
+    "song_name": "WINDS OF TRANSYLVANIA",
+    "artist_name": "Lovebites",
+    "sub_title": "ぶらどらぶ オープニング (歌いだし)",
+    "description": "本楽曲は、押井 守総監督、西村純二監督による新作シリーズ・アニメ\"ぶらどらぶ\"のオープニング主題歌（マイVersion）にも起用されたLOVEBITESの新曲。本日より音楽配信サイト、ストリーミング・サービスでの配信もスタートした。",
+    "image_url": "https://img01.boo-log.com/usr/z/z/1/zz1100/10.jpg",
+    "genres": [
+        {
+            "genre_id": 1,
+            "genre_name": "expert",
+            "color": "green"
+        },
+        {
+            "genre_id": 2,
+            "genre_name": "anime song",
+            "color": "blue"
+        },
+        {
+            "genre_id": 3,
+            "genre_name": "heavy metal",
+            "color": "gray"
+        },
+        {
+            "genre_id": 4,
+            "genre_name": "female band",
+            "color": "pink"
+        }
+    ],
+    "favorite_count": 11,
+    "is_my_favarite": 1,
+    "created_at":"2021-11-03T10:05:58.210Z",
+    "updated_at":"2021-11-03T10:05:58.210Z"
+}

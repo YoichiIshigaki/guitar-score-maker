@@ -2,22 +2,32 @@ import React from "react";
 import {Pill,TitleText,DescriptionText} from '../molecule/'
 import "../../App.css";
 import "../../index.css";
+import SongType from "../../types/song.json"
+
+type SongProps = typeof SongType
+
+// type PillProps = {
+// 	color: string;
+// 	genre: string;
+// 	id: number;
+// };
 
 
-type PillProps = {
-	color: string;
-	genre: string;
-	id: number;
-};
+const Card: React.FC<SongProps> = (props:SongProps) => {
+	const {
+		id,
+		song_name,
+		artist_name,
+		sub_title,
+		description,
+		image_url,
+		genres,
+		favorite_count,
+		is_my_favarite,
+		created_at,
+		updated_at
+	} = props
 
-const Card: React.FC = () => {
-
-	const genreData : PillProps[] = [
-		{id:1,genre:"#expert",color:"green"},
-		{id:2,genre:"#anime song",color:"blue"},
-		{id:3,genre:"#heavy metal",color:"gray"},
-		{id:4,genre:"#female band",color:"pink"},
-	]
 	return (
 		<>
 			<div className="group my-16 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
@@ -25,22 +35,22 @@ const Card: React.FC = () => {
 					<div className="md:flex-shrink-0">
 						<img
 							className="filter grayscale-[80%] group-hover:filter-none transition-all duration-100 h-auto w-full md:object-cover md:w-64 md:h-64"
-							src="https://img01.boo-log.com/usr/z/z/1/zz1100/10.jpg"
-							alt="Lovebites"
+							src={image_url}
+							alt={artist_name}
 						/>
 					</div>
 					<div className="p-4">
-						<TitleText title={"lovebites"}/>
+						<TitleText title={artist_name}/>
 						<p
-							className="block mt-0.5 text-lg leading-tight font-medium text-black hover:underline"
+							className="block mt-0.5 text-lg leading-tight font-medium text-black"
 						>
-							Holy War
+							{song_name}
 						</p>
 						<div>
-							<DescriptionText title={"Lovebites (stylized as LOVEBITES) is a Japanese all-female heavy metal band, formed in 2016 by former Destrose members Miho and Haruna. Its lineup currently consists of Haruna on drums, Midori and Miyako on guitar, and Asami on vocals. After signing to Victor Entertainment, the group released both their debut EP and their first album, The Lovebites EP and Awakening from Abyss, in 2017 before performing their first overseas concerts at the end of the year. "}/>
+							<DescriptionText text={description}/>
 							{
-								genreData.map((data) => {
-									return (<Pill key={data.id} id={data.id} genre={data.genre} color={data.color} />)							})
+								genres.map((genre) => {
+									return (<Pill key={genre.genre_id} {...genre} />)							})
 							}
 						</div>
 						<div className="h-5">
