@@ -4,14 +4,16 @@ import "../index.css";
 import axios from "axios";
 
 import { Card } from "./organisms/";
-import { Pill, FavoriteButton } from "./molecule/";
 import SongType from "../types/song.json"
-import Carousel from "./organisms/Carousel";
+import CarouselType from "../types/carousel.json"
+import MainCarousel from "./organisms/MainCarousel";
 
 type Song = typeof SongType
+type Carousel = typeof CarouselType
 
 const App: React.FC = () => {
 	const [songs, setSongsState] = useState<Song[]>([]);
+	const [carousels, setCarouselsState] = useState<Carousel[]>([]);
 
 	const getSongsState = async () => {
 		try{
@@ -26,13 +28,27 @@ const App: React.FC = () => {
 		}
 	};
 
+	const getCarouselsState = async () => {
+		try{
+			const res = await fetch("http://localhost:3003/api/images/carousels");
+			const json = await res.json();
+
+			console.log(json);
+			setCarouselsState(json);
+
+		}catch(error:any){
+			console.log(`error:${error}`);
+		}
+	};
+
 	useEffect(() => {
 		getSongsState();
+		getCarouselsState();
 	}, []);
 
 	return (
 		<>
-		<Carousel/>
+		<MainCarousel carousels={carousels}/>
 			{
 			songs.map((song)=>{
 				return <Card {...song}/>

@@ -1,0 +1,8 @@
+{
+    "id": 1,
+    "image_sp" : "https://source.unsplash.com/random/480x1200?guitar",
+    "image_pc" : "https://source.unsplash.com/random/1200x800?guitar",
+    "target_url" : "/genre/1",
+    "title": "expert",
+    "alternate_text":"carousel 1"
+}
