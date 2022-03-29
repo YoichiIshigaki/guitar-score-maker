@@ -13,36 +13,42 @@ type SuggestionAll = (SuggestionSong | SuggestionArtist | SuggestionGenre)
 
 const SearchBar:React.FC = () => {
 
-    const [searchText,setSearchText] = useState("")
-    const [searchType,setSearchType] = useState("")
+    const [searchData,setSearchData] = useState({text:"",type:"song,artist"})
     const [suggestions,setSuggestions] = useState<SuggestionAll[]>([])
 
     const searchSuggestions = async (inputText:string) => {
         // genreの場合
         if(inputText.slice(0,1) === "#"){
-            const searchGenre = inputText.slice(1)
-            setSearchType("genre")
-            setSearchText(searchGenre)
-            const res = await fetch(`http://localhost:3003/api/suggestions/genres?q=${searchGenre}`);
-			const json = await res.json();
+            
+            setSearchData({"text" : inputText , "type" : "genre"})
+            const res = await fetch(`http://localhost:3003/api/suggestions/genres?q=${inputText}`);
+			const json = await res.json();       
 
 			console.log(json);
 			setSuggestions(json);
         }
         else{
-            setSearchText(inputText)
+            setSearchData({...searchData,"text": inputText})
+            
+            if(searchData.text === "" ){
+                setSearchData({...searchData, type:"song,artist"})
+            }
 
             const songsRes = await fetch(`http://localhost:3003/api/suggestions/songs?q=${inputText}`);
 			const songsJson = await songsRes.json();
 
-            const artistsRes = await fetch(`http://localhost:3003/api/suggestions/artists?q=${inputText}`);
+            const artistsRes = await fetch(`http://localhost:3003/api/suggestions/artists?q=${inputText}&_limit=5`);
 			const artistsJson = await artistsRes.json();
-
-            setSearchType("song,artist")
 
 			console.log(songsJson);
 			console.log(artistsJson);
-			setSuggestions([...artistsJson,...songsJson]);
+
+            const suggestions  = [...artistsJson,...songsJson]
+
+            if(suggestions.length === 1){
+                setSearchData({...searchData,"type": suggestions[0].type})
+            }
+			setSuggestions(suggestions);
         }
     }
 
@@ -61,22 +67,15 @@ const SearchBar:React.FC = () => {
                     {
                         suggestions.map((suggestion,index) => {
                             return (
-                                <option key={index} value={suggestion.name}>{suggestion.name}</option>
+                                <option key={index} value={suggestion.name} />
                             )
                         })
                     }
                 </datalist>
-                <input type="hidden" name="type" value={searchType}/>
+                <input type="hidden" name="type" value={searchData.type} />
                 <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
                     <Search/>
                 </button>
-                {
-                        suggestions.map((suggestion,index) => {
-                            return (
-                                <div key={index} ><a href={suggestion.target_url}>{suggestion.name}</a></div>
-                            )
-                        })
-                    }
             </form>
         </div>
     )
