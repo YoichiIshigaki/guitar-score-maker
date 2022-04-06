@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import "../../index.css";
-import { ReactComponent as Search }  from './search.svg'
 import SuggestionSongType from "../../types/suggestions/song.json"
 import SuggestionArtistType from "../../types/suggestions/artist.json"
 import SuggestionGenreType from "../../types/suggestions/genre.json"
+
+import Search from '../SvgComponents/Search'
 
 type SuggestionSong = typeof SuggestionSongType
 type SuggestionArtist = typeof SuggestionArtistType
@@ -73,8 +74,8 @@ const SearchBar:React.FC = () => {
                     }
                 </datalist>
                 <input type="hidden" name="type" value={searchData.type} />
-                <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-                    <Search/>
+                <button type="submit" className="mt-4 absolute right-0 top-0 mr-4">
+                    <Search width={25} height={25}/>
                 </button>
             </form>
         </div>
