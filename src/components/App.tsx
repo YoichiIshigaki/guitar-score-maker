@@ -7,7 +7,7 @@ import { Card } from "./organisms/";
 import SongType from "../types/song.json"
 import CarouselType from "../types/carousel.json"
 import MainCarousel from "./organisms/MainCarousel";
-import Header from "./organisms/Header";
+import {Header,Footer} from "./organisms/";
 
 type Song = typeof SongType
 type Carousel = typeof CarouselType
@@ -49,12 +49,14 @@ const App: React.FC = () => {
 
 	return (
 		<>
-		<Header/>
-		<MainCarousel carousels={carousels}/>
-			{
-			songs.map((song)=>{
-				return <Card {...song}/>
-			})}
+			<Header/>
+			<MainCarousel carousels={carousels}/>
+				{
+					songs.map((song)=>{
+						return <Card {...song}/>
+					})
+				}
+			<Footer/>	
 		</>
 	);
 };
