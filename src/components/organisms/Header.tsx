@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{ useState } from 'react'
 import { SearchBar } from '../molecule'
 import logo from './Guitarra-logo-white.png'
 import "../../index.css"

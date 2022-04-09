@@ -3,11 +3,9 @@ import React, { useEffect, useState } from "react";
 import "../../index.css";
 // import axios from "axios";
 
-import { Card } from "../organisms";
 import SongType from "../../types/song.json"
 import CarouselType from "../../types/carousel.json"
-import MainCarousel from "../organisms/MainCarousel";
-import {Header,Footer} from "../organisms";
+import { Header,Footer,MainCarousel,Card } from "../organisms";
 
 type Song = typeof SongType
 type Carousel = typeof CarouselType

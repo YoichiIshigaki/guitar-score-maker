@@ -11,6 +11,7 @@ type Props = {
 
 }
 
+
 const MenuBar: React.FC<Props> = ({menuItems,dispMenuCount=5}) => {
 
     return (
@@ -22,7 +23,7 @@ const MenuBar: React.FC<Props> = ({menuItems,dispMenuCount=5}) => {
                         <Link to={item.menuUrl}>
                             { item.svgComponent }
                             <p className=" text-white my-2 text-center">
-                            {item.menuTitle}
+                                {item.menuTitle}
                             </p>
                         </Link>
                     </div>
