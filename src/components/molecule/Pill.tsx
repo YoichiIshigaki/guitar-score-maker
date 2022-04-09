@@ -1,6 +1,6 @@
 import React from "react";
 import "../../index.css";
-
+import {Link} from "react-router-dom"
 type Props = {
 	color: string;
 	genre_name: string;
@@ -20,9 +20,9 @@ const Pill: React.FC<Props> = (props: Props) => {
 					hover:bg-${color}-400 bg-${color}-300
 				`}
 			>
-				<a href={`/genre/${genre_id}`}>
+				<Link to={`/genre/${genre_id}`}>
 					#{genre_name}
-				</a>
+				</Link>
 			</p>
 		</>
 	);

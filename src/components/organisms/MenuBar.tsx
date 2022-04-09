@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../index.css"
-
+import {Link} from 'react-router-dom'
 type Props = {
     menuItems : {
         menuTitle : string,
@@ -19,12 +19,12 @@ const MenuBar: React.FC<Props> = ({menuItems,dispMenuCount=5}) => {
                 menuItems.map((item) => {
                     return (
                     <div className="flex-1 bg-black h-20">
-                        <a href={item.menuUrl}>
+                        <Link to={item.menuUrl}>
                             { item.svgComponent }
                             <p className=" text-white my-2 text-center">
                             {item.menuTitle}
                             </p>
-                        </a>
+                        </Link>
                     </div>
                     )
                 }).slice(0,dispMenuCount)

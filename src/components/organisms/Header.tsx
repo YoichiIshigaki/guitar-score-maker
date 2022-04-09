@@ -3,6 +3,7 @@ import { SearchBar } from '../molecule'
 import logo from './Guitarra-logo-white.png'
 import "../../index.css"
 import MenuBar from './MenuBar'
+import { Link } from 'react-router-dom'
 
 import {IconsGuitar96,IconsHeadphone96,IconsHelp96,IconsNote96,IconsPodium100,Login128,Search } from '../SvgComponents'
 
@@ -63,9 +64,9 @@ const Header:React.FC = () => {
         <header className={`bg-black ${headerSticky}`}>
             <div className='flex h-16 p-3'>
                 <div className='mx-2 w-auto flex-auto'>
-                    <a href="/" className='w-12 block'>
+                    <Link to="/" className='w-12 block'>
                         <img src={logo} alt="logo" />
-                    </a>
+                    </Link>
                 </div>
                 <div className='mx-2 w-auto flex-none' onClick={()=>{
                         setSearchShow(!searchShow)}
