@@ -60,7 +60,7 @@ const Header:React.FC = () => {
     //     document.body.classList.add('modal-open');
     // }
     return (
-        <div className={`bg-black ${headerSticky}`}>
+        <header className={`bg-black ${headerSticky}`}>
             <div className='flex h-16 p-3'>
                 <div className='mx-2 w-auto flex-auto'>
                     <a href="/" className='w-12 block'>
@@ -82,7 +82,7 @@ const Header:React.FC = () => {
             { searchShow ? <SearchBar /> : ''}
             <MenuBar menuItems={menuItems}/>
             {/* { searchShow ? <div className='z-50 w-screen h-screen top-0 sticky bg-opacity-70 bg-white'/> : ''} */}
-        </div>
+        </header>
     )
 }
 
