@@ -1,5 +1,5 @@
 import React from "react";
-import {Top} from './pages';
+import { Top,Login } from './pages';
 import { Route,Routes , BrowserRouter } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -8,7 +8,8 @@ const App: React.FC = () => {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Top/>} />
-      			</Routes>
+					<Route path="/login" element={<Login/>} />
+				</Routes>
 			</BrowserRouter>
 		</>
 	);

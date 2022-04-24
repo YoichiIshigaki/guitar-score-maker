@@ -76,8 +76,10 @@ const Header:React.FC = () => {
                     <Search {...SVGAtrr}/>
                 </div>
                 <div className='mx-2 w-auto flex-none'>
-                    <p className='text-white text-xl inline-block'>Login</p>
-                    <Login128 {...SVGAtrr}/>
+                    <Link to="/login">
+                        <p className='text-white text-xl inline-block'>Login</p>
+                        <Login128 {...SVGAtrr}/>
+                    </Link>
                 </div>
             </div>    
             { searchShow ? <SearchBar /> : ''}
