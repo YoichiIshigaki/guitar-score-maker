@@ -12,7 +12,7 @@ const Pill: React.FC<Props> = (props: Props) => {
 	return (
 		// eslint-disable-next-line jsx-a11y/anchor-is-valid
 		<>
-			<p
+			<span
 				className={`
 					m-3 duration-200 scale-100 hover:scale-125
 					text-white px-4 mx-1 w-auto rounded-xl
@@ -23,7 +23,7 @@ const Pill: React.FC<Props> = (props: Props) => {
 				<Link to={`/genre/${genre_id}`}>
 					#{genre_name}
 				</Link>
-			</p>
+			</span>
 		</>
 	);
 };

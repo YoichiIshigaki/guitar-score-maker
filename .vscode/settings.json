@@ -1,6 +1,23 @@
 {
+	"tailwindCSS.colorDecorators": true,
+	"editor.defaultFormatter": null,
 	"tailwindCSS.includeLanguages": {
 		"plaintext": "javascript"
 	},
-	"tailwindCSS.colorDecorators": true
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+    "[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"editor.tabSize": 2,
+	"reactSnippets.settings.prettierEnabled": true,
+	"prettier.jsxBracketSameLine": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.useTabs": true
 }
