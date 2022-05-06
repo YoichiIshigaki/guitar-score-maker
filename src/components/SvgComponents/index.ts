@@ -6,3 +6,6 @@ export { default as IconsNote96 } from "./IconsNote96";
 export { default as IconsPodium100 } from "./IconsPodium100";
 export { default as Login128 } from "./Login128";
 export { default as Search } from "./Search";
+export { default as StarEmpty } from "./StarEmpty";
+export { default as StarFull } from "./StarFull";
+export { default as StarHalf } from "./StarHalf";
