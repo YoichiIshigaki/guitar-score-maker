@@ -1,13 +1,13 @@
 import React from 'react'
+import LoginModal from '../organisms/LoginModal'
 
-// type Props = {
 
-// }
 
 const Login : React.FC = () => {
+
   return (
-    <div>
-      <h1>Hello Login</h1>
+    <div className="h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+      <LoginModal/>
     </div>
   )
 }
