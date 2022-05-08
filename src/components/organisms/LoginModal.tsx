@@ -1,9 +1,9 @@
 import React,{ useRef,useEffect,useState } from 'react'
 import { Magic } from 'magic-sdk';
 import { useNavigate } from 'react-router-dom';
+import Config from "../../modules/config/config"
 
-const API_KEY = "pk_live_B3D0A79DB1493CA5"
-
+const API_KEY = Config.magicLinkPubKey
 
 const LoginModal : React.FC = () => {
   const [isReady, setIsReady] = useState<boolean>(false)
