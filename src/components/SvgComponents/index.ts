@@ -1,3 +1,4 @@
+export { default as GoogleIcon } from "./GoogleIcon";
 export { default as IconsGuitar96 } from "./IconsGuitar96";
 export { default as IconsHeadphone96 } from "./IconsHeadphone96";
 export { default as IconsHelp96 } from "./IconsHelp96";
