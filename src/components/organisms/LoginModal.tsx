@@ -9,7 +9,7 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { auth,provider } from "../../modules/firebase/firebase"
 import { signInWithEmailAndPassword,createUserWithEmailAndPassword } from "firebase/auth";
 import { GoogleIcon } from '../SvgComponents';
-import { authUserContext } from '../../context/AuthContext';
+import { authUserContext } from '../../context/AuthUserContext';
 
 
 

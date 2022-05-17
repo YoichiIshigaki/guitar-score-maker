@@ -1,12 +1,7 @@
-import { createContext,ReactNode } from 'react';
-import { auth } from "../modules/firebase/firebase"
-import { Auth } from "firebase/auth"
+import { ReactNode } from "react";
+import { authUserContext,AuthUserContextInterface } from "../context/AuthUserContext";
+import { auth } from "../modules/firebase/firebase";
 
-interface AuthUserContextInterface {
-  user: Auth | null;
-}
-
-export const authUserContext = createContext<AuthUserContextInterface>({user:null});
 
 const authUser: AuthUserContextInterface = {
   user: auth,
