@@ -1,18 +1,22 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { signInWithPopup } from "firebase/auth"
 import { auth, provider } from "../../modules/firebase/firebase"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useAuthState } from "react-firebase-hooks/auth"
+import { authUserContext } from '../../context/AuthUserContext';
 
 const AuthButton : React.FC = () => {
 
   const [user] = useAuthState(auth);
+  const authUser = useContext(authUserContext)
 
   const signInWithGoogle = () => { 
     signInWithPopup(auth,provider)
   }
   // console.log("user = ",user)
+  console.log("component:AuthButton authUser = ",authUser)
+
 
   return (
     <>
@@ -37,7 +41,6 @@ type StyleProps = {
 
 const UserInfo : React.FC<StyleProps> = (props) => {
   
-  console.log("auth = ",auth)
   const imageUrl = "https://jp.seaicons.com/wp-content/uploads/2015/10/Guitar-icon1.png"
   
   return ( 

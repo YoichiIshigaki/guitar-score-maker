@@ -5,7 +5,6 @@ type _Config = {
 	logChannel: string;
 	env: string;
 	jsonServer: boolean;
-	magicLinkPubKey: string;
 };
 
 const Config:_Config = {
@@ -15,7 +14,6 @@ const Config:_Config = {
 	logChannel: process.env.REACT_APP_LOG_CHANNEL || "",
 	env: process.env.REACT_APP_ENV || "",
 	jsonServer: Boolean(process.env.REACT_APP_JSON_SERVER),
-	magicLinkPubKey: process.env.REACT_APP_MAGIC_LINK_PUB_KEY || ""
 };
 
 export default Config;

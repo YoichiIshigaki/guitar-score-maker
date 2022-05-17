@@ -7,7 +7,7 @@ import SongType from "../../types/song.json"
 import CarouselType from "../../types/carousel.json"
 import { Header,Footer,MainCarousel,Card } from "../organisms";
 import SimpleSlider from "../organisms/SimpleSlider";
-import Config from '../../modules/config/config';
+import { Config } from '../../modules/config/';
 import NewCard from "../organisms/NewCard";
 
 type Song = typeof SongType

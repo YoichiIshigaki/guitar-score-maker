@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../index.css";
-import Config from '../../modules/config/config';
+import { Config } from '../../modules/config/';
 import SongType from "../../types/song.json"
 
 type Song = typeof SongType

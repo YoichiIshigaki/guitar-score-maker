@@ -1,8 +1,8 @@
 import React from "react";
 import { Top,Login } from './pages';
 import { Route,Routes , BrowserRouter } from "react-router-dom";
-import Config from "../modules/config/config"
-import AuthUserProvider from "../context/AuthContext";
+import { Config } from "../modules/config/"
+import AuthUserProvider from "../provider/AuthUserProvider";
 
 const App: React.FC = () => {
 

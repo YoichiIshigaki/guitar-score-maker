@@ -1,6 +1,6 @@
-import React,{ useRef,useEffect,useState,useContext } from 'react'
+import React,{ useState,useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Config from "../../modules/config/config"
+import { Config } from "../../modules/config/"
 
 import { AuthButton } from "../molecule/"
 import { signInWithPopup } from "firebase/auth"
@@ -25,14 +25,14 @@ const LoginModal : React.FC = () => {
 
   const authUser = useContext(authUserContext)
 
-  console.log("authUser = ",authUser)
+  console.log("component:LoginModal authUser = ",authUser)
 
   const handleSignIn = async (e:React.MouseEvent<HTMLButtonElement>) => {
     // Firebase Implement
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      // navigate("/")
+      navigate("/")
       console.log("success!! Sign In")
     } catch (error: any) {
       alert(error.message);
@@ -44,7 +44,7 @@ const LoginModal : React.FC = () => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
-      // navigate("/")
+      navigate("/")
       console.log("success!! Sign Up")
 
     } catch (error: any) {
@@ -55,7 +55,8 @@ const LoginModal : React.FC = () => {
   const signInWithGoogle = () => {
     signInWithPopup(auth,provider).then((result) => {
       console.log("success auth by google")    
-      console.log("result = ",result)    
+      console.log("result = ",result)  
+      navigate("/")
     }).catch((error:any) => {
         // Handle Errors here.
         alert(error)
@@ -139,6 +140,7 @@ const LoginModal : React.FC = () => {
               <button  className="mx-2">
                 <FontAwesomeIcon className="text-red font-normal m-auto ml-2 text-xl" icon={faFacebook} color={"#4267B2"} style={{width:"50px",height:"50px"}}/>
               </button>
+              <AuthButton/>
               </div>
             </div>
           </div>

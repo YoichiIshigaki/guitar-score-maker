@@ -8,7 +8,7 @@ type _Config = {
 	appId: string;
 };
 
-const firebaseConfig:_Config = {
+const FirebaseConfig:_Config = {
   apiKey: process.env.REACT_APP_FIREBASE_APIKEY || "",
 	authDomain: process.env.REACT_APP_FIREBASE_DOMAIN || "",
 	databaseURL: process.env.REACT_APP_FIREBASE_DATABASE || "",
@@ -18,4 +18,4 @@ const firebaseConfig:_Config = {
 	appId: process.env.REACT_APP_FIREBASE_APP_ID || "",
 };
 
-export default firebaseConfig;
+export default FirebaseConfig;
