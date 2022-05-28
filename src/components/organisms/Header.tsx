@@ -1,16 +1,21 @@
-import React,{ useState } from 'react'
+import React,{ useState,useContext } from 'react'
 import { SearchBar } from '../molecule'
 import logo from './Guitarra-logo-white.png'
 import "../../index.css"
 import MenuBar from './MenuBar'
 import { Link } from 'react-router-dom'
-
+import { authUserContext } from '../../context/AuthUserContext'
 import {IconsGuitar96,IconsHeadphone96,IconsHelp96,IconsNote96,IconsPodium100,Login128,Search } from '../SvgComponents'
+import AvatarImage from '../molecule/AvatarImage'
 
 
 const Header:React.FC = () => {
     const [isLogin, setIsLogin] = useState(true)
     const [searchShow, setSearchShow] = useState(false)
+
+    const currentUser = useContext(authUserContext)
+    console.log("currentUser = ",currentUser)
+  
 
     // style icon
     const svgStyle = {
@@ -57,9 +62,6 @@ const Header:React.FC = () => {
 
     const headerSticky = searchShow ? "sticky z-100 top-0" : ""
     
-    // const openModal = () => {
-    //     document.body.classList.add('modal-open');
-    // }
     return (
         <header className={`bg-black ${headerSticky}`}>
             <div className='flex h-16 p-3'>
@@ -76,10 +78,16 @@ const Header:React.FC = () => {
                     <Search {...SVGAtrr}/>
                 </div>
                 <div className='mx-2 w-auto flex-none'>
-                    <Link to="/login">
-                        <p className='text-white text-xl inline-block'>Login</p>
-                        <Login128 {...SVGAtrr}/>
-                    </Link>
+                {
+                    currentUser.currentUser ? (
+                        <AvatarImage/>
+                    ) : (
+                        <Link to="/login">
+                            <p className='text-white text-xl inline-block'>Login</p>
+                            <Login128 {...SVGAtrr}/>
+                        </Link>
+                    )
+                }
                 </div>
             </div>    
             { searchShow ? <SearchBar /> : ''}

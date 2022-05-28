@@ -1,8 +1,13 @@
 import { createContext } from 'react';
-import { Auth } from "firebase/auth"
+import { Auth,User } from "firebase/auth"
+// import { User } from "firebase";
+
+// export interface AuthUserContextInterface {
+//   user: Auth | null;
+// }
 
 export interface AuthUserContextInterface {
-  user: Auth | null;
+  currentUser: User | null | undefined;
 }
 
-export const authUserContext = createContext<AuthUserContextInterface>({user:null});
+export const authUserContext = createContext<AuthUserContextInterface>({currentUser:undefined});

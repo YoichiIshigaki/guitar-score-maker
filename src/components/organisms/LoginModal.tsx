@@ -10,6 +10,7 @@ import { auth,provider } from "../../modules/firebase/firebase"
 import { signInWithEmailAndPassword,createUserWithEmailAndPassword } from "firebase/auth";
 import { GoogleIcon } from '../SvgComponents';
 import { authUserContext } from '../../context/AuthUserContext';
+import { SignOutButton } from '../molecule/AuthButton';
 
 
 
@@ -141,6 +142,7 @@ const LoginModal : React.FC = () => {
                 <FontAwesomeIcon className="text-red font-normal m-auto ml-2 text-xl" icon={faFacebook} color={"#4267B2"} style={{width:"50px",height:"50px"}}/>
               </button>
               <AuthButton/>
+              <SignOutButton/>
               </div>
             </div>
           </div>
