@@ -1,7 +1,7 @@
 import { ReactNode,useEffect,useState } from "react";
-import { authUserContext,AuthUserContextInterface } from "../context/AuthUserContext";
+import { authUserContext } from "../context/AuthUserContext";
 import { auth } from "../modules/firebase/firebase";
-import { Auth,User } from "firebase/auth"
+import { User } from "firebase/auth"
 
 // const authUser: AuthUserContextInterface = {
 //   user: ,
@@ -13,18 +13,33 @@ type Props = {
 
 const AuthUserProvider = ({children}:Props) => {
   const [currentUser, setCurrentUser] = useState<User | null | undefined>(undefined);
+  const [loading, setLoading] = useState<boolean>(true);
+  
   useEffect(() => {
     // Firebase Authのメソッド。ログイン状態が変化すると呼び出される
-    auth.onAuthStateChanged(user => {
+    const unsubscribed = auth.onAuthStateChanged(user => {
       setCurrentUser(user);
+      setLoading(false)
     });
-  }, []);
 
-  return (    
-    <authUserContext.Provider value={{currentUser}}>
-      {children}
-    </authUserContext.Provider>
-  );
+    return () => {
+      unsubscribed();
+    };
+  }, []);
+  // loading中はローディングを表示
+  if(loading){
+    return (
+      <p>loading</p>
+    )
+  }else{
+    return (    
+      <authUserContext.Provider value={{currentUser,loading}}>
+        {!loading && children}
+      </authUserContext.Provider>
+    );
+
+  }
+
 }
 
 export default AuthUserProvider

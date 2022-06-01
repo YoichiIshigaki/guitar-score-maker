@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Auth,User } from "firebase/auth"
+import { User } from "firebase/auth"
 // import { User } from "firebase";
 
 // export interface AuthUserContextInterface {
@@ -8,6 +8,7 @@ import { Auth,User } from "firebase/auth"
 
 export interface AuthUserContextInterface {
   currentUser: User | null | undefined;
+  loading: boolean;
 }
 
-export const authUserContext = createContext<AuthUserContextInterface>({currentUser:undefined});
+export const authUserContext = createContext<AuthUserContextInterface>({currentUser:undefined,loading:true});
