@@ -17,10 +17,10 @@ const NewCard: React.FC<SongProps> = (props:SongProps) => {
 		image_url,
 		genres,
 		favorite_count,
-		is_my_favarite,
 		star_rating,
 		created_at,
 		updated_at
+		is_my_favorite,
 	} = props
 	return (
 		<>

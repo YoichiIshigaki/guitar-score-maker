@@ -23,7 +23,7 @@ const Card: React.FC<SongProps> = (props:SongProps) => {
 		image_url,
 		genres,
 		favorite_count,
-		is_my_favarite,
+		is_my_favorite,
 		star_rating,
 		created_at,
 		updated_at
