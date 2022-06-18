@@ -1,0 +1,9 @@
+// import { useState,useEffect } from "react"
+
+// export type TYPE = "REGISTER" | "REMOVE" 
+
+// const useFavoriteSong = (songId : number,userUid? : string | null,type: TYPE) => {
+//   const [isFavorite,setIsFavorite] = useState<boolean>(false)
+// 	const [favoriteCount,setFavoriteCount] = useState<number>(0)
+  
+// }
